@@ -19,7 +19,9 @@
     </head>
 
     <body>
-        @livewire('counter')
+        <div class="card p-5 m-2 shadow">
+            @livewire('counter')
+        </div>
         <!-- Bootstrap JavaScript Libraries -->
         <script
             src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"

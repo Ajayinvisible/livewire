@@ -1,4 +1,10 @@
 <div>
+    @if (session('success'))
+        <div class="alert alert-primary alert-dismissible fade show" role="alert">
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            <strong>{{ session('success') }}</strong>
+        </div>
+    @endif
     <form wire:submit='createNewUser' action="">
         <div class="mb-3">
             <input wire:model='name' type="text" name="name" id="name" placeholder="name">

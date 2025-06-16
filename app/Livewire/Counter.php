@@ -25,5 +25,10 @@ class Counter extends Component
             'email' => $this->email,
             'password' => $this->password,
         ]);
+
+        // rest input fields
+        $this->reset(['name','email','password']);
+        // flash message
+        request()->session()->flash('success', 'user created successfully!');
     }
 }
