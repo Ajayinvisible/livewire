@@ -2,18 +2,28 @@
 
 namespace App\Livewire;
 
+use App\Models\User;
 use Livewire\Component;
 
 class Counter extends Component
 {
-    public $click;
+    public $name;
+    public $email;
+    public $password;
     public function render()
     {
-        return view('livewire.counter');
+        $users = User::all();
+        return view('livewire.counter',[
+            'users' => $users
+        ]);
     }
 
-    public function handelClick()
+    public function createNewUser()
     {
-        dump('clicked');
+        User::create([
+            'name' => $this->name,
+            'email' => $this->email,
+            'password' => $this->password,
+        ]);
     }
 }
