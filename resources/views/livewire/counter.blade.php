@@ -1,3 +1,8 @@
 <div>
-    <button wire:click='handelClick' class="btn btn-success">Click</button>
+    <h1>{{ $title }}</h1>
+    <h2>{{ $username }}</h2>
+    <p>
+        {{ count($users) }}
+    </p>
+    <button wire:click='createNewUser' class="btn btn-success">Create New User</button>
 </div>
