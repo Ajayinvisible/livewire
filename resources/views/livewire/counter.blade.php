@@ -42,10 +42,15 @@
             <div class="mb-3">
                 <span wire:loading wire:target='image' class="text-success">Uploading...</span>
                 @if ($image)
-                    <img src="{{ $image->temporaryUrl() }}" class="rounded shadow border border-2" width="60px" alt="">
+                    <img src="{{ $image->temporaryUrl() }}" class="rounded shadow border border-2" width="60px"
+                        alt="">
                 @endif
             </div>
-            <button class="btn btn-success">Create</button>
+            <div wire:loading class="spinner-border spinner-border-sm text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <button wire:loading.attr='disable' class="btn btn-success">Create</button>
+            {{-- <button wire:loading.remove class="btn btn-success">Create</button> --}}
             {{-- prevent default --}}
             {{-- <button wire:click.prevent='createNewUser' class="btn btn-success">Create</button> --}}
         </form>
