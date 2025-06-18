@@ -34,4 +34,5 @@
             <li wire:key='{{ $user->id }}'>{{ $user->name }}</li>
         @endforeach
     </ul>
+    {{ $users->links() }}
 </div>

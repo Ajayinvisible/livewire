@@ -5,12 +5,14 @@ namespace App\Livewire;
 use App\Models\User;
 use Livewire\Attributes\Rule;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class Counter extends Component
 {
+    use WithPagination;
     public function render()
     {
-        $users = User::all();
+        $users = User::paginate(5);
         return view('livewire.counter', [
             'users' => $users
         ]);
