@@ -51,4 +51,9 @@ class Counter extends Component
     {
         $this->dispatch('user-created');
     }
+
+    public function placeholder()
+    {
+        return view('form-placeholder');
+    }
 }

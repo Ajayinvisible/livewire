@@ -16,11 +16,14 @@
         <section class="container">
             <div class="card my-5 p-4 shadow">
                 <div class="row">
+                    <div class="col-lg-12 mb-4 border-bottom pb-2">
+                        <h1 class="text-center">Livewire User Management</h1>
+                    </div>
                     <div class="col-lg-8">
-                        @livewire('user-list')
+                        @livewire('user-list', ['lazy' => true])
                     </div>
                     <div class="col-lg-4 ">
-                        @livewire('counter')
+                        @livewire('counter', ['lazy' => true])
                     </div>
                 </div>
             </div>

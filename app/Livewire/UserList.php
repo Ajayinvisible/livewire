@@ -17,12 +17,17 @@ class UserList extends Component
         
     }
 
+    public function placeholder()
+    {
+        return view('userlist-placeholder');
+    }
 
     public function render()
     {
         $users = User::paginate(10);
         return view('livewire.user-list', [
-            'users' => $users
+            'users' => $users,
+            'count' => User::count(),
         ]);
     }
 }
