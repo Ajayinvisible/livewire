@@ -5,7 +5,7 @@
             <strong>{{ session('success') }}</strong>
         </div>
     @endif
-    <div class="card w-25 p-4 shadow">
+    <div class="card p-4 shadow">
         <form wire:submit='createNewUser' action="">
             <div class="mb-3">
                 <label for="name" class="form-label">Name</label>
@@ -50,18 +50,10 @@
                 <span class="visually-hidden">Loading...</span>
             </div>
             <button wire:loading.attr='disable' class="btn btn-success">Create</button>
+            <button wire:click.prevent='ReloadList' class="btn btn-primary">Reload list</button>
             {{-- <button wire:loading.remove class="btn btn-success">Create</button> --}}
             {{-- prevent default --}}
             {{-- <button wire:click.prevent='createNewUser' class="btn btn-success">Create</button> --}}
         </form>
-    </div>
-    <hr>
-    <div class="card w-25 p-4 shadow">
-        <ul>
-            @foreach ($users as $user)
-                <li wire:key='{{ $user->id }}'>{{ $user->name }}</li>
-            @endforeach
-        </ul>
-        {{ $users->links() }}
     </div>
 </div>

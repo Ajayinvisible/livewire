@@ -11,13 +11,9 @@ use Livewire\WithPagination;
 class Counter extends Component
 {
     use WithFileUploads;
-    use WithPagination;
     public function render()
     {
-        $users = User::paginate(5);
-        return view('livewire.counter', [
-            'users' => $users
-        ]);
+        return view('livewire.counter');
     }
 
     // validation rule
@@ -41,11 +37,18 @@ class Counter extends Component
             $validated['image'] = $this->image->store('uploads', 'public') ;
         }
         
-        User::create($validated);
+        $user = User::create($validated);
 
         // rest input fields
         $this->reset(['name', 'email', 'password', 'image']);
         // flash message
-        request()->session()->flash('success', 'user created successfully!');
+        request()->session()->flash('success', "User '{$user->name}' created successfully!");
+        // dispatch event
+        $this->dispatch('user-created', $user);
+    }
+
+    public function ReloadList()
+    {
+        $this->dispatch('user-created');
     }
 }
