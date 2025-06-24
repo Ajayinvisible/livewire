@@ -16,10 +16,10 @@
         <section class="container">
             <div class="card my-5 p-4 shadow">
                 <div class="row">
-                    <div class="col-lg-6">
+                    <div class="col-lg-8">
                         @livewire('user-list')
                     </div>
-                    <div class="col-lg-4 offset-2">
+                    <div class="col-lg-4 ">
                         @livewire('counter')
                     </div>
                 </div>

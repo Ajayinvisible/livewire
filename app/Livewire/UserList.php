@@ -20,7 +20,7 @@ class UserList extends Component
 
     public function render()
     {
-        $users = User::paginate(5);
+        $users = User::paginate(10);
         return view('livewire.user-list', [
             'users' => $users
         ]);

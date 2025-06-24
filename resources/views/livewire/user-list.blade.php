@@ -1,4 +1,4 @@
-<div class="card p-4 shadow">
+<div wire:poll.keep-alive class="card p-4 shadow">
     <ul>
         @foreach ($users as $user)
             <li wire:key='{{ $user->id }}'>{{ $user->name }}</li>
