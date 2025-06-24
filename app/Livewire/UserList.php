@@ -11,6 +11,8 @@ class UserList extends Component
 {
     use WithPagination;
 
+    // public $search = '';
+
     #[On('user-created')]
     public function updateList($user = null)
     {
@@ -19,7 +21,7 @@ class UserList extends Component
 
     public function placeholder()
     {
-        return view('userlist-placeholder');
+        return view('placeholders.userlist-placeholder');
     }
 
     public function render()

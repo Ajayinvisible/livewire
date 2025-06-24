@@ -54,6 +54,6 @@ class Counter extends Component
 
     public function placeholder()
     {
-        return view('form-placeholder');
+        return view('placeholders.form-placeholder');
     }
 }
